@@ -46,7 +46,7 @@ uint8_t dst[16];
 
 size_t required = nth::cobs_encode(src, dst);
 
-if (required <= sizeof(dst)) {
+if (required < sizeof(dst)) {
     // Append delimiter manually if needed
     dst[required++] = 0x00;
 } else {
